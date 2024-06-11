@@ -108,7 +108,7 @@ else:
     st.session_state.colors = df  # update session state
 
 # Sidebar to add a new color
-st.sidebar.header("Options")
+#st.sidebar.header("Options")
 
 with st.sidebar.expander("Add New Color", expanded=False):
     with st.sidebar.form(key="color_form"):
