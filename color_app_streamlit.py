@@ -108,16 +108,20 @@ else:
     st.session_state.colors = df  # update session state
 
 # Sidebar to add a new color
-#st.sidebar.header("Options")
+st.sidebar.header("Options")
 
-with st.sidebar.expander("Add New Color", expanded=True):
-    with st.sidebar.form(key="color_form"):
-        color_name = st.text_input("Color Name")
-        pantone_number = st.text_input("Pantone Number")
-        hex_code = st.text_input("Hex Code")
-        rgb_values = st.text_input("RGB Values")
-        notes = st.text_area("Notes")
-        add_color_btn = st.form_submit_button("Add Color")
+# Checkbox to control the visibility of the expander
+show_add_color = st.sidebar.checkbox("Add New Color")
+
+if show_add_color:
+    with st.sidebar.expander("Add New Color", expanded=True):
+        with st.sidebar.form(key="color_form"):
+            color_name = st.text_input("Color Name")
+            pantone_number = st.text_input("Pantone Number")
+            hex_code = st.text_input("Hex Code")
+            rgb_values = st.text_input("RGB Values")
+            notes = st.text_area("Notes")
+            add_color_btn = st.form_submit_button("Add Color")
 
 if add_color_btn:
     st.session_state.colors = add_color(st.session_state.colors, color_name, pantone_number, hex_code, rgb_values, notes)
