@@ -110,7 +110,7 @@ else:
 # Sidebar to add a new color
 #st.sidebar.header("Options")
 
-with st.sidebar.expander("Add New Color", expanded=False):
+with st.sidebar.expander("Add New Color", expanded=True):
     with st.sidebar.form(key="color_form"):
         color_name = st.text_input("Color Name")
         pantone_number = st.text_input("Pantone Number")
