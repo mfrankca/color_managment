@@ -9,12 +9,22 @@ from io import BytesIO
 BUCKET_NAME = 'sunraycolors'
 EXCEL_FILE_KEY = 'colors.xlsx'
 
+# Fetch environment variables
+aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
+aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
+aws_default_region = os.getenv('AWS_DEFAULT_REGION')
+
 # Initialize session state for colors
 if "colors" not in st.session_state:
     st.session_state.colors = pd.DataFrame(columns=["Color Name", "Pantone Number", "Hex Code", "RGB Values", "Notes"])
 
-# Initialize boto3 client
-s3_client = boto3.client('s3')
+# Initialize S3 client
+s3_client = boto3.client(
+    's3',
+    aws_access_key_id=aws_access_key_id,
+    aws_secret_access_key=aws_secret_access_key,
+    region_name=aws_default_region
+)
 
 def load_colors(file=None):
     if file:
