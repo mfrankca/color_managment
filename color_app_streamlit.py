@@ -10,9 +10,9 @@ BUCKET_NAME = 'sunraycolors'
 EXCEL_FILE_KEY = 'colors.xlsx'
 
 # Fetch environment variables
-aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
-aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
-aws_default_region = os.getenv('AWS_DEFAULT_REGION')
+aws_access_key_id = 'AKIA4MTWLVLGQWWYGGQC'
+aws_secret_access_key = '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'
+aws_default_region = 'us-east-2'
 
 # Initialize session state for colors
 if "colors" not in st.session_state:
