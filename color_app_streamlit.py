@@ -10,8 +10,8 @@ BUCKET_NAME = 'sunraycolors'
 EXCEL_FILE_KEY = 'colors.xlsx'
 
 # Fetch environment variables
-aws_access_key_id = 'AKIA4MTWLVLGQWWYGGQC'
-aws_secret_access_key = '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'
+aws_access_key_id = ''
+aws_secret_access_key = ''
 aws_default_region = 'us-east-2'
 
 # Initialize session state for colors
